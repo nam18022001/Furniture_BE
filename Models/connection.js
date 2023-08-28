@@ -1,7 +1,9 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const fs = require("fs");
 
-const serverCa = [fs.readFileSync("../DigiCertGlobalRootCA.crt.pem", "utf8")];
+const serverCa = [
+  fs.readFileSync("../../DigiCertGlobalRootCA.crt.pem", "utf8"),
+];
 
 const {
   DB_NAME,
