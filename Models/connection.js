@@ -1,9 +1,9 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const fs = require("fs");
 
-const serverCa = [
-  fs.readFileSync("../../DigiCertGlobalRootCA.crt.pem", "utf8"),
-];
+// const serverCa = [
+//   fs.readFileSync("../../DigiCertGlobalRootCA.crt.pem", "utf8"),
+// ];
 
 const {
   DB_NAME,
@@ -16,11 +16,11 @@ const {
 const connection = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {
   host: DB_HOST,
   dialect: DB_DIALECT,
-  dialectOptions: {
-    ssl: {
-      rejectUnauthorized: true,
-      ca: serverCa,
-    },
-  },
+  // dialectOptions: {
+  //   ssl: {
+  //     rejectUnauthorized: true,
+  //     ca: serverCa,
+  //   },
+  // },
 });
 module.exports = { connection };
